@@ -4,13 +4,12 @@ php:
   - 5.3
 
 script:
- #sample-php
+  #sample-php
    - curl -XPOST https://apibeta.shippable.com/projects/53bf696055a71a2200f1973d/build?token=$SHIPPABLE_API_TOKEN
-	
   #php-mongo
-  - curl -XPOST https://apibeta.shippable.com/projects/53bf696155a71a2200f1973f/build?token=$SHIPPABLE_API_TOKEN
+   - curl -XPOST https://apibeta.shippable.com/projects/53bf696155a71a2200f1973f/build?token=$SHIPPABLE_API_TOKEN
   #php-mysql
-  - curl -XPOST https://apibeta.shippable.com/projects/53bf696255a71a2200f19741/build?token=$SHIPPABLE_API_TOKEN
+   - curl -XPOST https://apibeta.shippable.com/projects/53bf696255a71a2200f19741/build?token=$SHIPPABLE_API_TOKEN
 
 notifications:
  email: false
