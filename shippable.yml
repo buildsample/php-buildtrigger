@@ -13,7 +13,7 @@ script:
    - echo "php-memcached"
    - curl -XPOST https://apibeta.shippable.com/projects/53c8d905d653b79d014207f3/build?token=$SHIPPABLE_API_TOKEN
    - echo "php-redis"
-   - curl -XPOST https://apibeta.shippable.com/projects/53c8ba3dd653b79d0142040a/build?token=$SHIPPABLE_API_TOKEN
+   - curl -XPOST https://apibeta.shippable.com/projects/53cf757c90c45db902f98434/build?token=$SHIPPABLE_API_TOKEN
    - echo "php-nginx"
    - curl -XPOST https://apibeta.shippable.com/projects/53cf50f5ac4103be01705c6a/build?token=$SHIPPABLE_API_TOKEN
 notifications:
