@@ -4,17 +4,17 @@ php:
   - 5.3
 
 script:
-  #sample-php
+   - echo "sample-php"
    - curl -XPOST https://apibeta.shippable.com/projects/53bf696055a71a2200f1973d/build?token=$SHIPPABLE_API_TOKEN
-  #php-mongo
+   - echo "php-mongo"
    - curl -XPOST https://apibeta.shippable.com/projects/53bf696155a71a2200f1973f/build?token=$SHIPPABLE_API_TOKEN
-  #php-mysql
+   - echo "php-mysql"
    - curl -XPOST https://apibeta.shippable.com/projects/53d7721f51d4257d04d65906/build?token=$SHIPPABLE_API_TOKEN
-   #php-memcached
-   - - curl -XPOST https://apibeta.shippable.com/projects/53c8d905d653b79d014207f3/build?token=$SHIPPABLE_API_TOKEN
-  #php-redis
+   - echo "php-memcached"
+   - curl -XPOST https://apibeta.shippable.com/projects/53c8d905d653b79d014207f3/build?token=$SHIPPABLE_API_TOKEN
+   - echo "php-redis"
    - curl -XPOST https://apibeta.shippable.com/projects/53c8ba3dd653b79d0142040a/build?token=$SHIPPABLE_API_TOKEN
-  #php-nginx
+   - echo "php-nginx"
    - curl -XPOST https://apibeta.shippable.com/projects/53cf50f5ac4103be01705c6a/build?token=$SHIPPABLE_API_TOKEN
 notifications:
  email: false
