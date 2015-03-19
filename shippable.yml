@@ -3,18 +3,12 @@ language: php
 php:
   - 5.3
 
-script:
-   - echo "sample-php"
-   - curl -XPOST https://apibeta.shippable.com/projects/53bf696055a71a2200f1973d/build?token=$SHIPPABLE_API_TOKEN
-   - echo "php-mongo"
-   - curl -XPOST https://apibeta.shippable.com/projects/53bf696155a71a2200f1973f/build?token=$SHIPPABLE_API_TOKEN
-   - echo "php-mysql"
-   - curl -XPOST https://apibeta.shippable.com/projects/53d7721f51d4257d04d65906/build?token=$SHIPPABLE_API_TOKEN
-   - echo "php-memcached"
-   - curl -XPOST https://apibeta.shippable.com/projects/53c8d905d653b79d014207f3/build?token=$SHIPPABLE_API_TOKEN
-   - echo "php-redis"
-   - curl -XPOST https://apibeta.shippable.com/projects/53cf757c90c45db902f98434/build?token=$SHIPPABLE_API_TOKEN
-   - echo "php-nginx"
-   - curl -XPOST https://apibeta.shippable.com/projects/53cf50f5ac4103be01705c6a/build?token=$SHIPPABLE_API_TOKEN
-notifications:
- email: false
+env:
+global:
+- projectID=54d9a87491426fd6a78cd55e
+- secure: Xzw9S/FvxvLq7g7Awq3gpda+xVLtkiCWQHn+wiobgJ56bfr8NP7G0fyDTV2rJ1qUVp9qpKkdk8pGt5uo5ypbfn7RedgaP0+ENuwM3/bLB7YBVQl0UNWmkxhEA+phJbNRZ0ZlgQ13M3raInKKLr4H/FXvnFWUt3v5I/rTdr0iRLyvsEy4s++yHICd4T98jqjlguDY06NS5ZiYxy65DOIcd5sX26Ul2x7Iz6ufrCu6Mus+pHWW16jK1jnS8bYQS0VlhjH35slq3RFJOk9u9GtKN68aXmARqVcqMZEW1psC1fewyTo3wMPu3zf1fg7eBqG+KONdxkhywYfIWEjQYI4ceA==
+#- secure: RGfKHvNO3+qGXsLjCH7QPeEGzY5HYfICW4krJ0a5CnMPkmbpUJOUeS7TdMavwE+s7j/NJsdspfZQXl7WM0KS5Go21UdqL95ceDtg2TcLQxvNiLxmaLSMnvvXqF4YYNcyD4WDJNYd06pmKKIv3NSd7yLmCIGPV0AlN54IHRftlLwKe+jyZdoo0yWtW4M3qvkqtbLJu8v2sqCsHpB15JTWupCuihp9QU12wczKENOplp1gwP+d9J9Ds9Q3ZPzuzpmUR3aT39tWQzYnBcE3oPteDrgugOosHl1mRdK/YwsJ3A4aDUhLe985rOuknfRVoTtL+1X0FfN34/O2U5DEGjPTeg==
+install: true
+script: true
+after_success:
+- 'curl -H "Authorization: apiToken $apiToken" -H "Content-Type: application/json" -d "{\"projectId\": \"$projectID\"}" https://apibeta.shippable.com/workflow/triggerBuild'
