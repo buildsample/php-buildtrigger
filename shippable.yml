@@ -10,7 +10,9 @@ env:
    - secure: EXcrpWteOu1JdtVa2hgUNYypSZyc1AOWIBeCLQRacbFMU+d3iIn1IbccEhW0Twf9d3xE+7/Iy3O+b5ifjYTuN2Jx91Atc/3fgVgPCRxn2DYzGPkHDmUnbegub6rr0xzJYgw5XEZWUJR2bpSyksUw/pqwFrCvQWn5+54EO5xbLUpvqOCyw0InmRET+mhNkBUXLIAy3VjoTHUOZkGccToHU9UZ2tmvvqyin0p1O5QG5FbwdNQQkb32YKxr7GDSRTYj9AS6Vgx8t1X8g1Lv531QTjyYMSkTENDWPLppvLOtMy43+g89jbmHxu3GZ10SlkuzqBOY1UzsAX9w6oGMVgx2Kw== #env test
 #- secure: RGfKHvNO3+qGXsLjCH7QPeEGzY5HYfICW4krJ0a5CnMPkmbpUJOUeS7TdMavwE+s7j/NJsdspfZQXl7WM0KS5Go21UdqL95ceDtg2TcLQxvNiLxmaLSMnvvXqF4YYNcyD4WDJNYd06pmKKIv3NSd7yLmCIGPV0AlN54IHRftlLwKe+jyZdoo0yWtW4M3qvkqtbLJu8v2sqCsHpB15JTWupCuihp9QU12wczKENOplp1gwP+d9J9Ds9Q3ZPzuzpmUR3aT39tWQzYnBcE3oPteDrgugOosHl1mRdK/YwsJ3A4aDUhLe985rOuknfRVoTtL+1X0FfN34/O2U5DEGjPTeg==
 install: true
+
 script: 
  - echo $test
+ 
 after_success:
 - 'curl -H "Authorization: apiToken $apiToken" -H "Content-Type: application/json" -d "{\"projectId\": \"$projectID\"}" https://apibeta.shippable.com/workflow/triggerBuild'
